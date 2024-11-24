@@ -26,12 +26,14 @@ def has_symbols(password):
 
 
 def score_password(password):
-    functions = [is_very_long,
-                has_digit,
-                has_letters,
-                has_upper_letters,
-                has_lower_letters,
-                has_symbols]
+    functions = [
+        is_very_long,
+        has_digit,
+        has_letters,
+        has_upper_letters,
+        has_lower_letters,
+        has_symbols
+    ]
 
     score = 0
     for i in functions:
@@ -42,7 +44,6 @@ def score_password(password):
 
 def on_ask_change(edit, new_edit_text):
     reply.set_text("Рейтинг пароля: %s" % score_password(new_edit_text))
-
 
 
 if __name__ == '__main__':
